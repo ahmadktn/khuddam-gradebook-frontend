@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Khuddam College of Health Science and Technology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0c2461;
+      --blue-dark:  #1a3c8f;
+      --blue-mid:   #2455b3;
+      --blue-light: #3b73d1;
+      --blue-pale:  #dde9f9;
+      --blue-bg:    #f0f5fc;
+      --red:        #b91c3a;
+      --red-dark:   #8c1229;
+      --red-light:  #e02246;
+      --gold:       #c9a73a;
+      --white:      #ffffff;
+      --off-white:  #f7f9fd;
+      --text:       #1a1f36;
+      --text-mid:   #3d4566;
+      --text-muted: #6b7699;
+      --border:     #ccd6ee;
+      --ff-serif: 'EB Garamond', Georgia, serif;
+      --ff-sans:  'Source Sans 3', Helvetica, sans-serif;
+      --shadow-sm: 0 1px 4px rgba(12,36,97,.08);
+      --shadow-md: 0 4px 18px rgba(12,36,97,.13);
+      --shadow-lg: 0 12px 40px rgba(12,36,97,.18);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--ff-sans);
+      color: var(--text);
+      background: var(--white);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+
+    /* ── UTILITY ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      display: inline-block;
+      font-family: var(--ff-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.22;
+    }
+    .divider {
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--red);
+      margin: 16px 0 24px;
+    }
+
+    /* ══ TOP BAR ══ */
+    #topbar {
+      background: var(--navy);
+      color: rgba(255,255,255,.75);
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: .01em;
+      border-bottom: 2px solid var(--red-dark);
+    }
+    #topbar .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 0;
+      gap: 16px;
+    }
+    #topbar .tb-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    #topbar .tb-left a,
+    #topbar .tb-right a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,.75);
+      transition: color .2s;
+    }
+    #topbar .tb-left a:hover,
+    #topbar .tb-right a:hover { color: var(--white); }
+    #topbar .tb-right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tb-portal-link {
+      padding: 4px 12px;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: .03em;
+      transition: background .2s, color .2s;
+    }
+    .tb-portal-link.student {
+      background: var(--blue-mid);
+      color: var(--white);
+    }
+    .tb-portal-link.admin {
+      background: var(--red-dark);
+      color: var(--white);
+    }
+    .tb-portal-link.admission {
+      background: var(--red);
+      color: var(--white);
+    }
+    .tb-portal-link:hover { filter: brightness(1.12); }
+    .tb-sep { color: rgba(255,255,255,.25); }
+
+    /* ══ HEADER ══ */
+    #header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      box-shadow: var(--shadow-sm);
+    }
+    #header .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+      height: 72px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-emblem {
+      width: 54px;
+      height: 54px;
+      flex-shrink: 0;
+    }
+    .logo-text-wrap { line-height: 1.2; }
+    .logo-name {
+      font-family: var(--ff-serif);
+      font-size: 17.5px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -.01em;
+    }
+    .logo-sub {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    /* NAV */
+    #nav ul {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    #nav ul li a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 8px 14px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-mid);
+      border-radius: 4px;
+      transition: color .2s, background .2s;
+      position: relative;
+    }
+    #nav ul li a:hover,
+    #nav ul li a.active {
+      color: var(--navy);
+      background: var(--blue-bg);
+    }
+    #nav ul li a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 14px;
+      right: 14px;
+      height: 2px;
+      background: var(--red);
+      border-radius: 2px;
+    }
+    /* Dropdown */
+    .has-dropdown { position: relative; }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      min-width: 220px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--navy);
+      border-radius: 0 0 6px 6px;
+      box-shadow: var(--shadow-md);
+      z-index: 1000;
+    }
+    .has-dropdown:hover .dropdown { display: block; }
+    .dropdown li a {
+      display: block;
+      padding: 9px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-mid);
+      border-radius: 0;
+      background: none;
+    }
+    .dropdown li a:hover { background: var(--blue-bg); color: var(--navy); }
+    .dropdown li + li { border-top: 1px solid var(--border); }
+
+    .apply-btn {
+      padding: 8px 18px;
+      background: var(--red);
+      color: var(--white) !important;
+      border-radius: 4px;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      letter-spacing: .03em;
+      transition: background .2s !important;
+    }
+    .apply-btn:hover { background: var(--red-dark) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: .3s;
+    }
+
+    /* ══ HERO ══ */
+    #hero {
+      position: relative;
+      background: var(--navy);
+      overflow: hidden;
+      min-height: 540px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          rgba(255,255,255,.018) 0px,
+          rgba(255,255,255,.018) 1px,
+          transparent 1px,
+          transparent 28px
+        );
+      pointer-events: none;
+    }
+    .hero-bg-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, #0c2461 0%, #1a3c8f 55%, #2455b3 100%);
+      pointer-events: none;
+    }
+    .hero-red-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 7px;
+      height: 100%;
+      background: var(--red);
+    }
+    .hero-bottom-trim {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--red) 0%, var(--gold) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 80px 0;
+    }
+    .hero-left {}
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(185,28,58,.22);
+      border: 1px solid rgba(185,28,58,.45);
+      color: #f2a0b0;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+    .hero-badge i { font-size: 9px; }
+    .hero-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: #b0cbf5;
+    }
+    .hero-tagline {
+      font-size: 15.5px;
+      color: rgba(255,255,255,.7);
+      max-width: 460px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 26px;
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--ff-sans);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      border-radius: 3px;
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 26px;
+      background: transparent;
+      color: var(--white);
+      font-family: var(--ff-sans);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      border: 2px solid rgba(255,255,255,.45);
+      border-radius: 3px;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,.08);
+    }
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .hero-stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .hero-stat-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 6px;
+      padding: 22px 18px;
+      backdrop-filter: blur(4px);
+    }
+    .hero-stat-card .stat-num {
+      font-family: var(--ff-serif);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+    .hero-stat-card .stat-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,.55);
+      margin-top: 5px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .hero-notice {
+      background: rgba(185,28,58,.18);
+      border-left: 3px solid var(--red);
+      border-radius: 0 4px 4px 0;
+      padding: 14px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .hero-notice i { color: #f08090; font-size: 14px; margin-top: 3px; flex-shrink: 0; }
+    .hero-notice p { font-size: 13px; color: rgba(255,255,255,.8); }
+    .hero-notice strong { color: var(--white); }
+
+    /* ══ ANNOUNCEMENT TICKER ══ */
+    #ticker {
+      background: var(--blue-dark);
+      color: var(--white);
+      padding: 11px 0;
+      overflow: hidden;
+      border-bottom: 2px solid var(--blue-mid);
+    }
+    #ticker .inner {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .ticker-label {
+      background: var(--red);
+      padding: 4px 16px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+      border-radius: 2px;
+    }
+    .ticker-track-wrap {
+      flex: 1;
+      overflow: hidden;
+      margin-left: 20px;
+    }
+    .ticker-track {
+      display: flex;
+      gap: 60px;
+      white-space: nowrap;
+      animation: ticker 30s linear infinite;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    .ticker-track span {
+      font-size: 13px;
+      font-weight: 500;
+      opacity: .9;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ticker-track span::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      background: var(--red);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ══ QUICK PORTALS ══ */
+    #portals {
+      background: var(--blue-bg);
+      border-bottom: 1px solid var(--border);
+    }
+    #portals .inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .portal-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 28px;
+      border-right: 1px solid var(--border);
+      transition: background .2s;
+    }
+    .portal-item:last-child { border-right: none; }
+    .portal-item:hover { background: var(--blue-pale); }
+    .portal-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+    .portal-icon.blue { background: var(--navy); color: var(--white); }
+    .portal-icon.red  { background: var(--red); color: var(--white); }
+    .portal-icon.teal { background: #1a6091; color: var(--white); }
+    .portal-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .portal-name {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 1px;
+    }
+    .portal-item:hover .portal-name { color: var(--blue-mid); }
+    .portal-arrow { margin-left: auto; color: var(--text-muted); font-size: 12px; }
+
+    /* ══ ABOUT ══ */
+    #about { padding: 88px 0; background: var(--white); }
+    #about .inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .about-image-stack {
+      position: relative;
+    }
+    .about-main-img {
+      width: 100%;
+      height: 380px;
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .about-main-img::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px,
+        transparent 1px, transparent 22px
+      );
+    }
+    .about-main-img svg { opacity: .15; }
+    .about-main-img .img-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(12,36,97,.85);
+      color: rgba(255,255,255,.7);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-align: center;
+      padding: 10px;
+      font-family: var(--ff-sans);
+    }
+    .about-accent-card {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      background: var(--red);
+      color: var(--white);
+      padding: 20px 24px;
+      border-radius: 4px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+    .about-accent-card .ac-num {
+      font-family: var(--ff-serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .about-accent-card .ac-text {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      opacity: .85;
+      margin-top: 4px;
+    }
+    .about-body {}
+    .about-body p {
+      font-size: 15.5px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+    .about-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .av-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px;
+      background: var(--off-white);
+      border-radius: 4px;
+      border-left: 3px solid var(--blue-mid);
+    }
+    .av-item i { color: var(--blue-mid); font-size: 15px; margin-top: 2px; }
+    .av-label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .av-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+    /* ══ PROGRAMMES ══ */
+    #programmes { padding: 88px 0; background: var(--blue-bg); }
+    .prog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 40px;
+    }
+    .prog-card {
+      background: var(--white);
+      border-radius: 4px;
+      border-top: 4px solid var(--blue-mid);
+      padding: 28px 26px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .2s, box-shadow .2s;
+      position: relative;
+    }
+    .prog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .prog-card.featured { border-top-color: var(--red); }
+    .prog-badge {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 2px;
+      margin-bottom: 14px;
+    }
+    .prog-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--blue-bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      font-size: 19px;
+      margin-bottom: 16px;
+    }
+    .prog-card.featured .prog-icon { background: #fee2e8; color: var(--red); }
+    .prog-title {
+      font-family: var(--ff-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .prog-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+    .prog-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .prog-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12.5px;
+      color: var(--text-mid);
+    }
+    .prog-meta-item i { color: var(--blue-mid); width: 14px; text-align: center; }
+    .prog-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 18px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--blue-mid);
+      transition: gap .2s;
+    }
+    .prog-card.featured .prog-link { color: var(--red); }
+    .prog-card:hover .prog-link { gap: 10px; }
+
+    /* ══ STATS BANNER ══ */
+    #stats-banner {
+      background: linear-gradient(100deg, var(--navy) 0%, var(--blue-dark) 60%, #1a4fa0 100%);
+      padding: 64px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    #stats-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(255,255,255,.025) 0px, rgba(255,255,255,.025) 1px,
+        transparent 1px, transparent 60px
+      );
+    }
+    .stats-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-box {
+      text-align: center;
+      padding: 16px 24px;
+      border-right: 1px solid rgba(255,255,255,.12);
+    }
+    .stat-box:last-child { border-right: none; }
+    .stat-box .sn {
+      font-family: var(--ff-serif);
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-box .su {
+      font-family: var(--ff-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--red-light);
+    }
+    .stat-box .sl {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      margin-top: 8px;
+    }
+
+    /* ══ NEWS & EVENTS ══ */
+    #news { padding: 88px 0; background: var(--white); }
+    .news-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .news-main {}
+    .news-featured {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      transition: box-shadow .2s;
+    }
+    .news-featured:hover { box-shadow: var(--shadow-md); }
+    .nf-img {
+      height: 200px;
+      background: linear-gradient(135deg, #1a3c8f 0%, #2455b3 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .nf-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,.03) 0, rgba(255,255,255,.03) 1px,
+        transparent 1px, transparent 20px
+      );
+    }
+    .nf-img-icon { color: rgba(255,255,255,.15); font-size: 60px; }
+    .nf-cat {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--red);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+      z-index: 1;
+    }
+    .nf-body { padding: 22px; }
+    .nf-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .nf-title {
+      font-family: var(--ff-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+    .nf-excerpt { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+    .news-list { display: flex; flex-direction: column; gap: 0; }
+    .nl-item {
+      display: flex;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      transition: background .2s;
+      cursor: pointer;
+    }
+    .nl-item:first-child { border-top: 1px solid var(--border); }
+    .nl-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+    .nl-content {}
+    .nl-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.4;
+      margin-bottom: 4px;
+      transition: color .2s;
+    }
+    .nl-item:hover .nl-title { color: var(--blue-mid); }
+    .nl-date { font-size: 12px; color: var(--text-muted); }
+
+    /* Events sidebar */
+    .news-sidebar { border-left: 1px solid var(--border); padding-left: 28px; }
+    .sidebar-title {
+      font-family: var(--ff-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sidebar-title i { color: var(--red); }
+    .event-item { margin-bottom: 20px; }
+    .ev-date {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .ev-badge {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 4px 10px;
+      border-radius: 3px;
+      min-width: 44px;
+    }
+    .ev-badge .ed { font-size: 16px; font-weight: 800; line-height: 1; font-family: var(--ff-serif); }
+    .ev-badge .em { font-size: 10px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; opacity: .75; }
+    .ev-title { font-size: 13.5px; font-weight: 600; color: var(--navy); line-height: 1.4; }
+    .ev-meta { font-size: 12px; color: var(--text-muted); margin-top: 3px; display: flex; align-items: center; gap: 5px; }
+    .event-item + .event-item { padding-top: 16px; border-top: 1px solid var(--border); }
+
+    /* ══ NOTICE BOARD ══ */
+    #notices {
+      background: var(--blue-bg);
+      padding: 64px 0;
+      border-top: 1px solid var(--border);
+    }
+    .notices-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .notice-card {
+      background: var(--white);
+      border-radius: 4px;
+      border-top: 3px solid var(--blue-mid);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .notice-card.urgent { border-top-color: var(--red); }
+    .notice-card.info   { border-top-color: var(--gold); }
+    .nc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .nc-tag {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+    .nc-tag.academic { background: var(--blue-pale); color: var(--navy); }
+    .nc-tag.urgent   { background: #fee2e8; color: var(--red); }
+    .nc-tag.info     { background: #fef3c7; color: #92400e; }
+    .nc-date { font-size: 12px; color: var(--text-muted); }
+    .nc-title {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--navy);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .nc-body { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .nc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--blue-mid);
+      margin-top: 10px;
+    }
+    .notice-card.urgent .nc-link { color: var(--red); }
+
+    /* ══ CONTACT ══ */
+    #contact { padding: 88px 0; background: var(--white); }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info {}
+    .contact-info p {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+    .contact-items { display: flex; flex-direction: column; gap: 18px; }
+    .ci-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .ci-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--blue-bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      font-size: 15px;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+    .ci-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); }
+    .ci-value { font-size: 14.5px; font-weight: 600; color: var(--navy); margin-top: 2px; }
+
+    .contact-form {}
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-mid);
+      margin-bottom: 6px;
+      letter-spacing: .02em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      font-family: var(--ff-sans);
+      font-size: 14px;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue-mid);
+      box-shadow: 0 0 0 3px rgba(36,85,179,.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--ff-sans);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .form-submit:hover { background: var(--blue-dark); }
+
+    /* ══ FOOTER ══ */
+    #footer {
+      background: var(--navy);
+      color: rgba(255,255,255,.7);
+      padding: 64px 0 0;
+      border-top: 4px solid var(--red);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+    }
+    .footer-about {}
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .footer-logo-text .fn { font-family: var(--ff-serif); font-size: 16px; font-weight: 700; color: var(--white); }
+    .footer-logo-text .fs { font-size: 10px; letter-spacing: .09em; text-transform: uppercase; color: rgba(255,255,255,.4); }
+    .footer-about p { font-size: 13.5px; line-height: 1.75; margin-bottom: 20px; }
+    .footer-socials { display: flex; gap: 10px; }
+    .social-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.6);
+      font-size: 13px;
+      transition: background .2s, color .2s;
+    }
+    .social-btn:hover { background: var(--red); color: var(--white); border-color: var(--red); }
+    .footer-col h4 {
+      font-family: var(--ff-serif);
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-links a {
+      font-size: 13.5px;
+      color: rgba(255,255,255,.6);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: color .2s, gap .2s;
+    }
+    .footer-links a i { font-size: 10px; }
+    .footer-links a:hover { color: var(--white); gap: 10px; }
+    .footer-bottom {
+      margin-top: 48px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+    .footer-bottom a { color: rgba(255,255,255,.5); transition: color .2s; }
+    .footer-bottom a:hover { color: var(--white); }
+    .accred-badges { display: flex; align-items: center; gap: 14px; }
+    .acc-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 3px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,.55);
+    }
+    .acc-badge i { color: var(--gold); }
+
+    /* ══ MOBILE NAV ══ */
+    #mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(12,36,97,.97);
+      z-index: 1000;
+      flex-direction: column;
+      padding: 32px 28px;
+      overflow-y: auto;
+    }
+    #mobile-nav.open { display: flex; }
+    .mobile-nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    .mobile-nav-close {
+      color: var(--white);
+      font-size: 22px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    #mobile-nav ul { display: flex; flex-direction: column; gap: 4px; }
+    #mobile-nav ul li a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      color: rgba(255,255,255,.8);
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: background .2s, color .2s;
+    }
+    #mobile-nav ul li a:hover { background: rgba(255,255,255,.08); color: var(--white); }
+    #mobile-nav ul li a i { width: 18px; text-align: center; color: rgba(255,255,255,.45); }
+    .mobile-portals {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mobile-portals a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .mobile-portals .mp-admit { background: var(--red); color: var(--white); }
+    .mobile-portals .mp-portal { background: var(--blue-mid); color: var(--white); }
+    .mobile-portals .mp-admin { background: rgba(255,255,255,.1); color: var(--white); border: 1px solid rgba(255,255,255,.15); }
+
+    /* ══ SCROLL TO TOP ══ */
+    #scroll-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 42px;
+      height: 42px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      font-size: 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s, transform .2s, background .2s;
+      border: none;
+      z-index: 800;
+    }
+    #scroll-top.visible { opacity: 1; pointer-events: auto; }
+    #scroll-top:hover { background: var(--red); transform: translateY(-2px); }
+
+    /* ══ ANIMATIONS ══ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 1024px) {
+      #about .inner,
+      .news-layout { grid-template-columns: 1fr; }
+      .news-sidebar { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 28px; }
+      .prog-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .about-accent-card { right: 0; bottom: 0; }
+    }
+    @media (max-width: 768px) {
+      #nav, #topbar .tb-left { display: none; }
+      .hamburger { display: flex; }
+      #portals .inner { grid-template-columns: 1fr; }
+      .portal-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .prog-grid { grid-template-columns: 1fr; }
+      .hero-content { grid-template-columns: 1fr; padding: 60px 0; }
+      .hero-right { display: none; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-box { border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); }
+      .notices-grid { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      #topbar .tb-left { display: none; }
+      .about-values { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div id="topbar">
+    <div class="container inner">
+      <div class="tb-left">
+        <a href="mailto:info@kudams.edu.ng"><i class="fa-regular fa-envelope"></i> info@kudams.edu.ng</a>
+        <a href="tel:+2348000000000"><i class="fa-solid fa-phone"></i> +234 800 000 0000</a>
+      </div>
+      <div class="tb-right">
+        <a href="https://admission.kudams.edu.ng" class="tb-portal-link admission">
+          <i class="fa-solid fa-file-pen"></i> Apply Now
+        </a>
+        <span class="tb-sep">|</span>
+        <a href="https://portal.kudams.edu.ng" class="tb-portal-link student">
+          <i class="fa-solid fa-user-graduate"></i> Student Portal
+        </a>
+        <span class="tb-sep">|</span>
+        <a href="https://admin.kudams.edu.ng" class="tb-portal-link admin">
+          <i class="fa-solid fa-lock"></i> Admin
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER / NAV -->
+  <header id="header">
+    <div class="container inner">
+      <a href="/" class="logo">
+        <!-- SVG Crest -->
+        <svg class="logo-emblem" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="27" cy="27" r="26" fill="#0c2461" stroke="#b91c3a" stroke-width="2"/>
+          <path d="M27 10 L32 20 L43 20 L34 27 L37 38 L27 32 L17 38 L20 27 L11 20 L22 20 Z" fill="#b91c3a" opacity=".9"/>
+          <circle cx="27" cy="27" r="7" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
+          <circle cx="27" cy="27" r="3" fill="rgba(255,255,255,.7)"/>
+          <text x="27" y="47" font-family="Georgia,serif" font-size="5.5" font-weight="700" fill="rgba(255,255,255,.65)" text-anchor="middle" letter-spacing=".5">KCHST</text>
+        </svg>
+        <div class="logo-text-wrap">
+          <div class="logo-name">Khuddam College of<br/>Health Science &amp; Technology</div>
+        </div>
+      </a>
+      <nav id="nav">
+        <ul>
+          <li><a href="#about" class="active"><i class="fa-solid fa-building-columns fa-xs"></i> About</a></li>
+          <li class="has-dropdown">
+            <a href="#programmes"><i class="fa-solid fa-book-medical fa-xs"></i> Programmes <i class="fa-solid fa-chevron-down fa-xs"></i></a>
+            <ul class="dropdown">
+              <li><a href="#programmes"><i class="fa-regular fa-circle-dot"></i> Environmental Health</a></li>
+              <li><a href="#programmes"><i class="fa-regular fa-circle-dot"></i> Community Health</a></li>
+              <li><a href="#programmes"><i class="fa-regular fa-circle-dot"></i> Health Information Management</a></li>
+              <li><a href="#programmes"><i class="fa-regular fa-circle-dot"></i> Nutrition &amp; Dietetics</a></li>
+              <li><a href="#programmes"><i class="fa-regular fa-circle-dot"></i> Medical Laboratory Science</a></li>
+            </ul>
+          </li>
+          <li><a href="#news"><i class="fa-regular fa-newspaper fa-xs"></i> News</a></li>
+          <li><a href="#notices"><i class="fa-regular fa-bell fa-xs"></i> Notices</a></li>
+          <li><a href="#contact"><i class="fa-regular fa-envelope fa-xs"></i> Contact</a></li>
+          <li><a href="https://admission.kudams.edu.ng" class="apply-btn"><i class="fa-solid fa-arrow-right-to-bracket"></i> Apply</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="hamburger-btn" onclick="openMobileNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div id="mobile-nav">
+    <div class="mobile-nav-header">
+      <div style="color:white;font-family:var(--ff-serif);font-size:16px;font-weight:700;">KCHST</div>
+      <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul>
+      <li><a href="#about" onclick="closeMobileNav()"><i class="fa-solid fa-building-columns"></i> About</a></li>
+      <li><a href="#programmes" onclick="closeMobileNav()"><i class="fa-solid fa-book-medical"></i> Programmes</a></li>
+      <li><a href="#news" onclick="closeMobileNav()"><i class="fa-regular fa-newspaper"></i> News &amp; Events</a></li>
+      <li><a href="#notices" onclick="closeMobileNav()"><i class="fa-regular fa-bell"></i> Notices</a></li>
+      <li><a href="#contact" onclick="closeMobileNav()"><i class="fa-regular fa-envelope"></i> Contact</a></li>
+    </ul>
+    <div class="mobile-portals">
+      <a href="https://admission.kudams.edu.ng" class="mp-admit"><i class="fa-solid fa-file-pen"></i> Apply for Admission</a>
+      <a href="https://portal.kudams.edu.ng" class="mp-portal"><i class="fa-solid fa-user-graduate"></i> Student Portal</a>
+      <a href="https://admin.kudams.edu.ng" class="mp-admin"><i class="fa-solid fa-lock"></i> Admin Portal</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-red-bar"></div>
+    <div class="hero-bottom-trim"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-left">
+          <div class="hero-badge">
+            <i class="fa-solid fa-shield-halved"></i>
+            NBTE Accredited Institution
+          </div>
+          <h1 class="hero-title">
+            Training <em>Health</em><br/>
+            Professionals for<br/>
+            a Better Nigeria
+          </h1>
+          <p class="hero-tagline">
+            Khuddam College of Health Science and Technology is committed to producing
+            highly skilled, ethically grounded health professionals who serve communities
+            across Nigeria and beyond.
+          </p>
+          <div class="hero-ctas">
+            <a href="https://admission.kudams.edu.ng" class="btn-primary">
+              <i class="fa-solid fa-file-pen"></i> Apply for Admission
+            </a>
+            <a href="#programmes" class="btn-outline">
+              <i class="fa-solid fa-book-open"></i> View Programmes
+            </a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-stat-grid">
+            <div class="hero-stat-card">
+              <div class="stat-num">10<span style="font-size:1.2rem;color:#9cb8ee">+</span></div>
+              <div class="stat-label">Programmes Offered</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="stat-num">2,400<span style="font-size:1.2rem;color:#9cb8ee">+</span></div>
+              <div class="stat-label">Students Enrolled</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="stat-num">14<span style="font-size:1.2rem;color:#9cb8ee">+</span></div>
+              <div class="stat-label">Years of Excellence</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="stat-num">98<span style="font-size:1.2rem;color:#9cb8ee">%</span></div>
+              <div class="stat-label">Graduate Placement</div>
+            </div>
+          </div>
+          <div class="hero-notice">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <p><strong>2024/2025 Admission is Open.</strong> Applications are currently being accepted for ND and HND programmes. <a href="https://admission.kudams.edu.ng" style="color:#f08090;text-decoration:underline;">Apply now &rarr;</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div id="ticker">
+    <div class="container inner">
+      <span class="ticker-label"><i class="fa-solid fa-bullhorn fa-xs"></i> &nbsp;Latest</span>
+      <div class="ticker-track-wrap">
+        <div class="ticker-track">
+          <span>2024/2025 ND and HND Admission forms are on sale &mdash; visit admission.kudams.edu.ng</span>
+          <span>First semester examination timetable is now available on the student portal</span>
+          <span>Matriculation ceremony for fresh students scheduled for 12th May 2025</span>
+          <span>NBTE accreditation visit successfully concluded &mdash; programmes fully accredited</span>
+          <span>National conference on Community Health Practice &mdash; Register now via student portal</span>
+          <span>2024/2025 ND and HND Admission forms are on sale &mdash; visit admission.kudams.edu.ng</span>
+          <span>First semester examination timetable is now available on the student portal</span>
+          <span>Matriculation ceremony for fresh students scheduled for 12th May 2025</span>
+          <span>NBTE accreditation visit successfully concluded &mdash; programmes fully accredited</span>
+          <span>National conference on Community Health Practice &mdash; Register now via student portal</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK PORTALS -->
+  <div id="portals">
+    <div class="container">
+      <div class="inner">
+        <a href="https://admission.kudams.edu.ng" class="portal-item">
+          <div class="portal-icon red"><i class="fa-solid fa-file-pen"></i></div>
+          <div>
+            <div class="portal-label">Online</div>
+            <div class="portal-name">Admissions Portal</div>
+          </div>
+          <i class="fa-solid fa-arrow-right portal-arrow"></i>
+        </a>
+        <a href="https://portal.kudams.edu.ng" class="portal-item">
+          <div class="portal-icon blue"><i class="fa-solid fa-user-graduate"></i></div>
+          <div>
+            <div class="portal-label">Student</div>
+            <div class="portal-name">Academic Portal</div>
+          </div>
+          <i class="fa-solid fa-arrow-right portal-arrow"></i>
+        </a>
+        <a href="https://admin.kudams.edu.ng" class="portal-item">
+          <div class="portal-icon teal"><i class="fa-solid fa-lock"></i></div>
+          <div>
+            <div class="portal-label">Staff &amp; Admin</div>
+            <div class="portal-name">Administration Portal</div>
+          </div>
+          <i class="fa-solid fa-arrow-right portal-arrow"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="inner">
+        <div class="about-image-stack fade-in">
+          <div class="about-main-img">
+            <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="70" cy="70" r="68" stroke="white" stroke-width="2"/>
+              <path d="M70 20 C70 20 100 44 100 70 C100 96 82 114 70 120 C58 114 40 96 40 70 C40 44 70 20 70 20Z" stroke="white" stroke-width="2" fill="none"/>
+              <line x1="40" y1="70" x2="100" y2="70" stroke="white" stroke-width="2"/>
+              <line x1="70" y1="20" x2="70" y2="120" stroke="white" stroke-width="2"/>
+              <path d="M55 55 Q70 40 85 55 Q100 70 85 85 Q70 100 55 85 Q40 70 55 55Z" stroke="white" stroke-width="1.5" fill="none"/>
+            </svg>
+            <div class="img-label">Khuddam College of Health Science and Technology &mdash; Katsina</div>
+          </div>
+          <div class="about-accent-card">
+            <div class="ac-num">2010</div>
+            <div class="ac-text">Year Founded</div>
+          </div>
+        </div>
+        <div class="about-body fade-in">
+          <span class="section-label"><i class="fa-solid fa-circle fa-2xs"></i> &nbsp; About the College</span>
+          <h2 class="section-title">A Legacy of Health Education in Northern Nigeria</h2>
+          <span class="divider"></span>
+          <p>
+            Khuddam College of Health Science and Technology (KCHST) is a foremost institution
+            dedicated to the training of middle-level health professionals in Nigeria. Located in
+            Katsina State, the College has consistently produced graduates who serve in hospitals,
+            primary health care centres, and research institutions nationwide.
+          </p>
+          <p>
+            Accredited by the National Board for Technical Education (NBTE) and affiliated with
+            relevant professional regulatory bodies, KCHST upholds the highest standards in
+            health sciences education, combining rigorous academic instruction with hands-on
+            clinical training.
+          </p>
+          <div class="about-values">
+            <div class="av-item">
+              <i class="fa-solid fa-microscope"></i>
+              <div>
+                <div class="av-label">Academic Excellence</div>
+                <div class="av-sub">Rigorous, evidence-based curriculum</div>
+              </div>
+            </div>
+            <div class="av-item">
+              <i class="fa-solid fa-hands-holding-circle"></i>
+              <div>
+                <div class="av-label">Community Service</div>
+                <div class="av-sub">Committed to public health impact</div>
+              </div>
+            </div>
+            <div class="av-item">
+              <i class="fa-solid fa-flask"></i>
+              <div>
+                <div class="av-label">Practical Training</div>
+                <div class="av-sub">State-of-the-art laboratory facilities</div>
+              </div>
+            </div>
+            <div class="av-item">
+              <i class="fa-solid fa-scale-balanced"></i>
+              <div>
+                <div class="av-label">Professional Ethics</div>
+                <div class="av-sub">Integrity at the core of our mission</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMMES -->
+  <section id="programmes">
+    <div class="container">
+      <div class="fade-in" style="text-align:center;max-width:560px;margin:0 auto">
+        <span class="section-label"><i class="fa-solid fa-circle fa-2xs"></i> &nbsp; Academic Programmes</span>
+        <h2 class="section-title">Programmes We Offer</h2>
+        <span class="divider" style="margin-left:auto;margin-right:auto"></span>
+        <p style="color:var(--text-muted);font-size:15px;">All programmes lead to National Diploma (ND) or Higher National Diploma (HND) awards recognised by NBTE.</p>
+      </div>
+      <div class="prog-grid">
+        <div class="prog-card fade-in featured">
+          <span class="prog-badge">ND &amp; HND</span>
+          <div class="prog-icon"><i class="fa-solid fa-leaf"></i></div>
+          <div class="prog-title">Environmental Health Technology</div>
+          <p class="prog-desc">Equipping students with skills to monitor, assess, and control environmental hazards that affect human health and well-being.</p>
+          <div class="prog-meta">
+            <div class="prog-meta-item"><i class="fa-regular fa-clock"></i> 2 years (ND) / 2 years (HND)</div>
+            <div class="prog-meta-item"><i class="fa-solid fa-building-columns"></i> NBTE Accredited</div>
+          </div>
+          <a href="https://admission.kudams.edu.ng" class="prog-link">Apply for this programme <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="prog-card fade-in">
+          <div class="prog-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div class="prog-title">Community Health Extension Work</div>
+          <p class="prog-desc">Training frontline primary health care workers for effective community-level disease prevention and health promotion across Nigeria.</p>
+          <div class="prog-meta">
+            <div class="prog-meta-item"><i class="fa-regular fa-clock"></i> 3 years (ND)</div>
+            <div class="prog-meta-item"><i class="fa-solid fa-building-columns"></i> NBTE Accredited</div>
+          </div>
+          <a href="https://admission.kudams.edu.ng" class="prog-link">Apply for this programme <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="prog-card fade-in">
+          <div class="prog-icon"><i class="fa-solid fa-database"></i></div>
+          <div class="prog-title">Health Information Management</div>
+          <p class="prog-desc">Combining medical records science with modern data management systems to support evidence-based health decision-making.</p>
+          <div class="prog-meta">
+            <div class="prog-meta-item"><i class="fa-regular fa-clock"></i> 2 years (ND) / 2 years (HND)</div>
+            <div class="prog-meta-item"><i class="fa-solid fa-building-columns"></i> NBTE Accredited</div>
+          </div>
+          <a href="https://admission.kudams.edu.ng" class="prog-link">Apply for this programme <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="prog-card fade-in">
+          <div class="prog-icon"><i class="fa-solid fa-apple-whole"></i></div>
+          <div class="prog-title">Nutrition &amp; Dietetics Technology</div>
+          <p class="prog-desc">Preparing professionals in food science, nutritional assessment, and therapeutic diet management for clinical and community settings.</p>
+          <div class="prog-meta">
+            <div class="prog-meta-item"><i class="fa-regular fa-clock"></i> 2 years (ND) / 2 years (HND)</div>
+            <div class="prog-meta-item"><i class="fa-solid fa-building-columns"></i> NBTE Accredited</div>
+          </div>
+          <a href="https://admission.kudams.edu.ng" class="prog-link">Apply for this programme <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="prog-card fade-in">
+          <div class="prog-icon"><i class="fa-solid fa-vial-circle-check"></i></div>
+          <div class="prog-title">Medical Laboratory Technology</div>
+          <p class="prog-desc">Training laboratory technicians skilled in pathological, microbiological, and biochemical analysis supporting clinical diagnosis.</p>
+          <div class="prog-meta">
+            <div class="prog-meta-item"><i class="fa-regular fa-clock"></i> 2 years (ND) / 2 years (HND)</div>
+            <div class="prog-meta-item"><i class="fa-solid fa-building-columns"></i> NBTE Accredited</div>
+          </div>
+          <a href="https://admission.kudams.edu.ng" class="prog-link">Apply for this programme <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="prog-card fade-in" style="border-top-color:var(--gold);background:var(--navy);color:var(--white)">
+          <div class="prog-icon" style="background:rgba(255,255,255,.1);color:var(--gold)"><i class="fa-solid fa-plus"></i></div>
+          <div class="prog-title" style="color:var(--white)">More Programmes Available</div>
+          <p class="prog-desc" style="color:rgba(255,255,255,.6)">KCHST offers additional allied health programmes. Visit the admissions office or portal for the full list of available courses.</p>
+          <div class="prog-meta">
+            <div class="prog-meta-item" style="color:rgba(255,255,255,.5)"><i class="fa-solid fa-circle-info" style="color:rgba(255,255,255,.35)"></i> Full programme list on portal</div>
+          </div>
+          <a href="https://admission.kudams.edu.ng" class="prog-link" style="color:var(--gold)">Browse all programmes <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BANNER -->
+  <div id="stats-banner">
+    <div class="container">
+      <div class="stats-grid fade-in">
+        <div class="stat-box">
+          <div><span class="sn">2,400</span><span class="su">+</span></div>
+          <div class="sl">Students Enrolled</div>
+        </div>
+        <div class="stat-box">
+          <div><span class="sn">10</span><span class="su">+</span></div>
+          <div class="sl">Accredited Programmes</div>
+        </div>
+        <div class="stat-box">
+          <div><span class="sn">120</span><span class="su">+</span></div>
+          <div class="sl">Academic Staff</div>
+        </div>
+        <div class="stat-box">
+          <div><span class="sn">98</span><span class="su">%</span></div>
+          <div class="sl">Graduate Employment Rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWS & EVENTS -->
+  <section id="news">
+    <div class="container">
+      <div class="fade-in">
+        <span class="section-label"><i class="fa-solid fa-circle fa-2xs"></i> &nbsp; News &amp; Events</span>
+        <h2 class="section-title">Latest from KCHST</h2>
+        <span class="divider"></span>
+      </div>
+      <div class="news-layout">
+        <div class="news-main fade-in">
+          <div class="news-featured">
+            <div class="nf-img">
+              <i class="fa-solid fa-graduation-cap nf-img-icon"></i>
+              <span class="nf-cat">Academic</span>
+            </div>
+            <div class="nf-body">
+              <div class="nf-date"><i class="fa-regular fa-calendar"></i> 14 April 2025</div>
+              <div class="nf-title">KCHST Records Outstanding Performance in NBTE Accreditation Review</div>
+              <p class="nf-excerpt">The National Board for Technical Education recently concluded its routine accreditation visit to the college. All programmes were found to be in full compliance with national standards, with the Environmental Health Technology programme receiving a commendation for exceptional laboratory facilities and curriculum delivery.</p>
+            </div>
+          </div>
+          <div class="news-list">
+            <div class="nl-item">
+              <div class="nl-dot"></div>
+              <div class="nl-content">
+                <div class="nl-title">First Semester Examinations Timetable Released — Students Urged to Check Portal</div>
+                <div class="nl-date"><i class="fa-regular fa-calendar fa-xs"></i> &nbsp;8 April 2025</div>
+              </div>
+            </div>
+            <div class="nl-item">
+              <div class="nl-dot"></div>
+              <div class="nl-content">
+                <div class="nl-title">Community Health Extension Work Students Complete Field Placement at Rimi General Hospital</div>
+                <div class="nl-date"><i class="fa-regular fa-calendar fa-xs"></i> &nbsp;2 April 2025</div>
+              </div>
+            </div>
+            <div class="nl-item">
+              <div class="nl-dot"></div>
+              <div class="nl-content">
+                <div class="nl-title">College Inaugurates New Medical Laboratory to Enhance Practical Training for Students</div>
+                <div class="nl-date"><i class="fa-regular fa-calendar fa-xs"></i> &nbsp;25 March 2025</div>
+              </div>
+            </div>
+            <div class="nl-item">
+              <div class="nl-dot"></div>
+              <div class="nl-content">
+                <div class="nl-title">2024/2025 HND Admission List &mdash; Second Batch &mdash; Now Available on the Portal</div>
+                <div class="nl-date"><i class="fa-regular fa-calendar fa-xs"></i> &nbsp;18 March 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="news-sidebar fade-in">
+          <div class="sidebar-title"><i class="fa-regular fa-calendar-check"></i> Upcoming Events</div>
+          <div class="event-item">
+            <div class="ev-date">
+              <div class="ev-badge"><div class="ed">12</div><div class="em">May</div></div>
+            </div>
+            <div class="ev-title">2024/2025 Matriculation Ceremony</div>
+            <div class="ev-meta"><i class="fa-regular fa-clock"></i> 9:00 AM &nbsp;&bull;&nbsp; College Auditorium</div>
+          </div>
+          <div class="event-item">
+            <div class="ev-date">
+              <div class="ev-badge"><div class="ed">20</div><div class="em">May</div></div>
+            </div>
+            <div class="ev-title">First Semester Examinations Begin</div>
+            <div class="ev-meta"><i class="fa-regular fa-clock"></i> See timetable on portal</div>
+          </div>
+          <div class="event-item">
+            <div class="ev-date">
+              <div class="ev-badge" style="background:var(--red)"><div class="ed">5</div><div class="em">Jun</div></div>
+            </div>
+            <div class="ev-title">National Conference on Community Health Practice</div>
+            <div class="ev-meta"><i class="fa-solid fa-location-dot"></i> Katsina State &nbsp;&bull;&nbsp; All Day</div>
+          </div>
+          <div class="event-item">
+            <div class="ev-date">
+              <div class="ev-badge"><div class="ed">14</div><div class="em">Jun</div></div>
+            </div>
+            <div class="ev-title">5th Convocation Ceremony &mdash; Class of 2024</div>
+            <div class="ev-meta"><i class="fa-regular fa-clock"></i> 10:00 AM &nbsp;&bull;&nbsp; College Grounds</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTICE BOARD -->
+  <section id="notices">
+    <div class="container">
+      <div class="fade-in">
+        <span class="section-label"><i class="fa-solid fa-circle fa-2xs"></i> &nbsp; Official Notices</span>
+        <h2 class="section-title">Notice Board</h2>
+        <span class="divider"></span>
+      </div>
+      <div class="notices-grid">
+        <div class="notice-card urgent fade-in">
+          <div class="nc-header">
+            <span class="nc-tag urgent"><i class="fa-solid fa-triangle-exclamation fa-xs"></i> &nbsp;Urgent</span>
+            <span class="nc-date">April 9, 2025</span>
+          </div>
+          <div class="nc-title">Deadline for School Fees Payment &mdash; First Semester 2024/2025</div>
+          <p class="nc-body">All students are reminded that the deadline for payment of school fees for the first semester is 18th April 2025. Students who have not paid will not be cleared for examinations.</p>
+          <a href="https://portal.kudams.edu.ng" class="nc-link">Pay via Student Portal <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+        </div>
+        <div class="notice-card fade-in">
+          <div class="nc-header">
+            <span class="nc-tag academic"><i class="fa-solid fa-book fa-xs"></i> &nbsp;Academic</span>
+            <span class="nc-date">April 7, 2025</span>
+          </div>
+          <div class="nc-title">Course Registration for Second Semester Now Open</div>
+          <p class="nc-body">Students are advised to log on to the student portal to complete their second semester course registration. The exercise is open until 30th April 2025.</p>
+          <a href="https://portal.kudams.edu.ng" class="nc-link">Register Courses <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+        </div>
+        <div class="notice-card info fade-in">
+          <div class="nc-header">
+            <span class="nc-tag info"><i class="fa-solid fa-circle-info fa-xs"></i> &nbsp;Admissions</span>
+            <span class="nc-date">April 2, 2025</span>
+          </div>
+          <div class="nc-title">Post-UTME Screening Exercise &mdash; Date &amp; Requirements</div>
+          <p class="nc-body">Candidates who applied through JAMB are required to appear for post-UTME screening on 3rd May 2025 with all required credentials. Check the admissions portal for full details.</p>
+          <a href="https://admission.kudams.edu.ng" class="nc-link">View Details <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-info fade-in">
+          <span class="section-label"><i class="fa-solid fa-circle fa-2xs"></i> &nbsp; Get in Touch</span>
+          <h2 class="section-title">Contact the College</h2>
+          <span class="divider"></span>
+          <p>
+            For admissions enquiries, academic support, or general information about the college,
+            please reach out through any of the channels below. Our office is open Monday to Friday,
+            8:00 AM to 4:00 PM.
+          </p>
+          <div class="contact-items">
+            <div class="ci-item">
+              <div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="ci-label">Address</div>
+                <div class="ci-value">Kudams Road, Katsina State, Nigeria</div>
+              </div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <div class="ci-label">Phone</div>
+                <div class="ci-value">+234 800 000 0000</div>
+              </div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-icon"><i class="fa-regular fa-envelope"></i></div>
+              <div>
+                <div class="ci-label">Email</div>
+                <div class="ci-value">info@kudams.edu.ng</div>
+              </div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-icon"><i class="fa-solid fa-globe"></i></div>
+              <div>
+                <div class="ci-label">Web Portals</div>
+                <div class="ci-value" style="font-size:13px;display:flex;flex-direction:column;gap:2px;">
+                  <a href="https://admission.kudams.edu.ng" style="color:var(--red)">admission.kudams.edu.ng</a>
+                  <a href="https://portal.kudams.edu.ng" style="color:var(--blue-mid)">portal.kudams.edu.ng</a>
+                  <a href="https://admin.kudams.edu.ng" style="color:var(--text-muted)">admin.kudams.edu.ng</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form fade-in">
+          <div style="background:var(--off-white);border:1px solid var(--border);border-radius:4px;padding:32px;">
+            <h3 style="font-family:var(--ff-serif);font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:22px;display:flex;align-items:center;gap:8px;"><i class="fa-regular fa-message" style="color:var(--red)"></i> Send an Enquiry</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" placeholder="e.g. Musa" />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" placeholder="e.g. Abdullahi" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject">
+                <option value="">Select a subject&hellip;</option>
+                <option>Admissions Enquiry</option>
+                <option>Programme Information</option>
+                <option>Academic Matters</option>
+                <option>Fee Payment</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Type your message here&hellip;"></textarea>
+            </div>
+            <button class="form-submit" onclick="handleFormSubmit(event)">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <svg width="40" height="40" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="27" cy="27" r="26" fill="rgba(255,255,255,.08)" stroke="rgba(185,28,58,.6)" stroke-width="2"/>
+              <path d="M27 10 L32 20 L43 20 L34 27 L37 38 L27 32 L17 38 L20 27 L11 20 L22 20 Z" fill="#b91c3a" opacity=".85"/>
+              <circle cx="27" cy="27" r="6" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+              <circle cx="27" cy="27" r="2.5" fill="rgba(255,255,255,.5)"/>
+            </svg>
+            <div class="footer-logo-text">
+              <div class="fn">Khuddam College of Health Science &amp; Technology</div>
+              <div class="fs">Katsina State, Nigeria</div>
+            </div>
+          </div>
+          <p>A leading allied health training institution in Northern Nigeria, committed to excellence in health sciences education and community development since 2010.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="#about"><i class="fa-solid fa-chevron-right"></i> About the College</a>
+            <a href="#programmes"><i class="fa-solid fa-chevron-right"></i> Programmes</a>
+            <a href="#news"><i class="fa-solid fa-chevron-right"></i> News &amp; Events</a>
+            <a href="#notices"><i class="fa-solid fa-chevron-right"></i> Notice Board</a>
+            <a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact Us</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Portals</h4>
+          <div class="footer-links">
+            <a href="https://admission.kudams.edu.ng"><i class="fa-solid fa-file-pen"></i> Admissions</a>
+            <a href="https://portal.kudams.edu.ng"><i class="fa-solid fa-user-graduate"></i> Student Portal</a>
+            <a href="https://admin.kudams.edu.ng"><i class="fa-solid fa-lock"></i> Admin Portal</a>
+          </div>
+          <h4 style="margin-top:24px">Accreditation</h4>
+          <div class="footer-links">
+            <a href="#"><i class="fa-solid fa-certificate"></i> NBTE Accredited</a>
+            <a href="#"><i class="fa-solid fa-shield-halved"></i> NUC Affiliated</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <div class="footer-links">
+            <a href="#"><i class="fa-solid fa-location-dot"></i> Kudams Road, Katsina State</a>
+            <a href="tel:+2348000000000"><i class="fa-solid fa-phone"></i> +234 800 000 0000</a>
+            <a href="mailto:info@kudams.edu.ng"><i class="fa-regular fa-envelope"></i> info@kudams.edu.ng</a>
+            <a href="#"><i class="fa-regular fa-clock"></i> Mon &ndash; Fri: 8AM &ndash; 4PM</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2025 Khuddam College of Health Science &amp; Technology. All rights reserved.</div>
+        <div class="accred-badges">
+          <span class="acc-badge"><i class="fa-solid fa-star"></i> NBTE Accredited</span>
+          <span class="acc-badge"><i class="fa-solid fa-certificate"></i> Est. 2010</span>
+        </div>
+        <div>
+          <a href="#">Privacy Policy</a> &nbsp;&bull;&nbsp; <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script>
+    // Mobile nav
+    function openMobileNav() {
+      document.getElementById('mobile-nav').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobileNav() {
+      document.getElementById('mobile-nav').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Scroll-triggered fade-in
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          // Stagger siblings
+          const siblings = Array.from(e.target.parentElement.querySelectorAll('.fade-in'));
+          const idx = siblings.indexOf(e.target);
+          e.target.style.transitionDelay = (idx * 80) + 'ms';
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Scroll-to-top button
+    const scrollBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+
+    // Active nav highlighting
+    const sections = ['about','programmes','news','notices','contact'];
+    const navLinks = document.querySelectorAll('#nav ul li a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(id => {
+        const sec = document.getElementById(id);
+        if (sec && window.scrollY >= sec.offsetTop - 120) current = id;
+      });
+      navLinks.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+      });
+    });
+
+    // Simple form handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const btn = e.currentTarget;
+      btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message Sent';
+      btn.style.background = '#166534';
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+        btn.style.background = '';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
