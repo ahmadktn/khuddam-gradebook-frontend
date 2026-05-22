@@ -734,6 +734,88 @@
     .prog-card.featured .prog-link { color: var(--red); }
     .prog-card:hover .prog-link { gap: 10px; }
 
+    /* ══ GALLERY & VIDEO ══ */
+    #gallery,
+    #video {
+      padding: 88px 0;
+      background: var(--white);
+    }
+    .media-intro {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+    .video-card {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 32px;
+      align-items: center;
+      margin-top: 40px;
+    }
+    .video-preview {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .video-preview video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .video-details {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .video-details p {
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin: 0;
+    }
+    .video-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13.3px;
+      color: var(--text-muted);
+    }
+    .video-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 4px;
+      font-weight: 700;
+      transition: background .2s;
+    }
+    .video-btn:hover {
+      background: var(--blue-dark);
+    }
+
     /* ══ STATS BANNER ══ */
     #stats-banner {
       background: linear-gradient(100deg, var(--navy) 0%, var(--blue-dark) 60%, #1a4fa0 100%);
@@ -1252,6 +1334,8 @@
       .news-layout { grid-template-columns: 1fr; }
       .news-sidebar { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 28px; }
       .prog-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .video-card { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .about-accent-card { right: 0; bottom: 0; }
     }
@@ -1261,6 +1345,8 @@
       #portals .inner { grid-template-columns: 1fr; }
       .portal-item { border-right: none; border-bottom: 1px solid var(--border); }
       .prog-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .video-card { grid-template-columns: 1fr; }
       .hero-content { grid-template-columns: 1fr; padding: 60px 0; }
       .hero-right { display: none; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1330,6 +1416,8 @@
             </ul>
           </li>
           <li><a href="#news"><i class="fa-regular fa-newspaper fa-xs"></i> News</a></li>
+          <li><a href="#gallery"><i class="fa-solid fa-camera fa-xs"></i> Gallery</a></li>
+          <li><a href="#video"><i class="fa-solid fa-video fa-xs"></i> Video</a></li>
           <li><a href="#notices"><i class="fa-regular fa-bell fa-xs"></i> Notices</a></li>
           <li><a href="#contact"><i class="fa-regular fa-envelope fa-xs"></i> Contact</a></li>
           <li><a href="https://admission.kudams.edu.ng" class="apply-btn"><i class="fa-solid fa-arrow-right-to-bracket"></i> Apply</a></li>
@@ -1351,6 +1439,8 @@
       <li><a href="#about" onclick="closeMobileNav()"><i class="fa-solid fa-building-columns"></i> About</a></li>
       <li><a href="#programmes" onclick="closeMobileNav()"><i class="fa-solid fa-book-medical"></i> Programmes</a></li>
       <li><a href="#news" onclick="closeMobileNav()"><i class="fa-regular fa-newspaper"></i> News &amp; Events</a></li>
+      <li><a href="#gallery" onclick="closeMobileNav()"><i class="fa-solid fa-camera"></i> Gallery</a></li>
+      <li><a href="#video" onclick="closeMobileNav()"><i class="fa-solid fa-video"></i> Video</a></li>
       <li><a href="#notices" onclick="closeMobileNav()"><i class="fa-regular fa-bell"></i> Notices</a></li>
       <li><a href="#contact" onclick="closeMobileNav()"><i class="fa-regular fa-envelope"></i> Contact</a></li>
     </ul>
@@ -1614,6 +1704,58 @@
             <div class="prog-meta-item" style="color:rgba(255,255,255,.5)"><i class="fa-solid fa-circle-info" style="color:rgba(255,255,255,.35)"></i> Full programme list on portal</div>
           </div>
           <a href="https://admission.kudams.edu.ng" class="prog-link" style="color:var(--gold)">Browse all programmes <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="media-intro fade-in">
+        <span class="section-label"><i class="fa-solid fa-circle fa-2xs"></i> &nbsp; Campus Gallery</span>
+        <h2 class="section-title">Photos from Around KCHST</h2>
+        <span class="divider"></span>
+        <p>Explore moments from campus life, practical training sessions, and student activities that make Khuddam College a vibrant learning community.</p>
+      </div>
+      <div class="gallery-grid fade-in">
+        <div class="gallery-item"><img src="assets/IMG-20260502-WA0082.jpg" alt="Campus students in training" /></div>
+        <div class="gallery-item"><img src="assets/IMG-20260502-WA0084.jpg" alt="Laboratory practical session" /></div>
+        <div class="gallery-item"><img src="assets/IMG-20260502-WA0085.jpg" alt="College classroom activity" /></div>
+        <div class="gallery-item"><img src="assets/IMG-20260502-WA0091.jpg" alt="College campus grounds" /></div>
+        <div class="gallery-item"><img src="assets/IMG-20260502-WA0092.jpg" alt="Student group learning" /></div>
+        <div class="gallery-item"><img src="assets/IMG-20260502-WA0097.jpg" alt="College campus community" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section id="video">
+    <div class="container">
+      <div class="media-intro fade-in">
+        <span class="section-label"><i class="fa-solid fa-circle fa-2xs"></i> &nbsp; Campus Video</span>
+        <h2 class="section-title">Experience KCHST in Motion</h2>
+        <span class="divider"></span>
+        <p>Watch a short campus showcase highlighting our facilities, student life, and commitment to practical health sciences training.</p>
+      </div>
+      <div class="video-card fade-in">
+        <div class="video-preview">
+          <video controls poster="assets/IMG-20260502-WA0090.jpg">
+            <source src="assets/VID-20260519-WA0000.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-details">
+          <div>
+            <h3 style="font-family:var(--ff-serif);font-size:1.6rem;color:var(--navy);margin-bottom:12px;">Campus Life & Practical Training</h3>
+            <p>The video below showcases Khuddam College’s academic environment, laboratory facilities, and community engagement. It gives prospective students a real sense of what life is like at KCHST.</p>
+          </div>
+          <div class="video-meta">
+            <span><i class="fa-solid fa-clock"></i> 1 min 24 sec</span>
+            <span><i class="fa-solid fa-film"></i> Campus Showcase</span>
+            <span><i class="fa-solid fa-location-dot"></i> Katsina State</span>
+          </div>
+          <a href="#contact" class="video-btn"><i class="fa-solid fa-envelope"></i> Get in Touch</a>
         </div>
       </div>
     </div>
@@ -1970,7 +2112,7 @@
     });
 
     // Active nav highlighting
-    const sections = ['about','programmes','news','notices','contact'];
+    const sections = ['about','programmes','news','gallery','video','notices','contact'];
     const navLinks = document.querySelectorAll('#nav ul li a');
     window.addEventListener('scroll', () => {
       let current = '';
